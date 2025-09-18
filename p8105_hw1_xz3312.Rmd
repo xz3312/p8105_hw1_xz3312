@@ -4,11 +4,13 @@ author: "Eric Zhang"
 date: "2025-09-17"
 output: html_document
 ---
-#Problem 1
-##Loading package and dataset
-```{r}
-install.packages("moderndive")
-data("early_january_weather")
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(moderndive)
+library(ggplot2)
+library(dplyr)
+data("early_january_weather", package = "moderndive")
 ```
 
 ##Dataset description
