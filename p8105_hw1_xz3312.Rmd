@@ -2,7 +2,7 @@
 title: "p8105_hw1_xz3312"
 author: "Eric Zhang"
 date: "2025-09-17"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
