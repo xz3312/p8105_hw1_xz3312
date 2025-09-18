@@ -53,6 +53,7 @@ ggsave("ewr_plot.png", plot = ewr_plot, width = 7, height = 5, dpi = 300)
 ```
 
 #Problem 2
+##Create a dataframe
 ```{r}
 library(tidyverse)
 set.seed(1234)
@@ -68,6 +69,7 @@ plot_df = tibble(
 
 str(plot_df)
 ```
+##Take the mean of each variable in dataframe
 ```{r}
 mean(plot_df$sample_size)
 mean(plot_df$is_positive)
@@ -75,6 +77,14 @@ mean(plot_df$character_vec)
 mean(plot_df$factor_vec)
 ```
 Taking the mean of the whole dataframe results in error, argument is not numeric or logical. Therefore, the mean of each column needs to be taken separately. It's also worth noting the mean of character vector and factor vector are NA, because they are text strings not numeric values so taking the mean is not possible.
+
+##Apply as.numeric to convert to numeric
+```{r}
+as.numeric(plot_df$is_positive)
+as.numeric(plot_df$character_vec)
+as.numeric(plot_df$factor_vec)
+```
+Logical vector can be converted to numeric values, with True = 1 and False = 0. Character vector consists of texts that cannot be converted to numeric values hence the as.numeric function result is NA. Factor vector can be converted to numeric values that represent the letter: A = 1, B = 2, C = 3.
 
 
 
