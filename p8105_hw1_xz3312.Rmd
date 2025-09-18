@@ -29,19 +29,54 @@ mean(early_january_weather$temp)
 ```
 
 
-##Make a scatter plot of temp vs time(hour)
+##Make a scatter plot of temp vs time(hour) from ewr january weather dataset
 ```{r}
 library(ggplot2)
 
-ggplot(early_january_weather, aes(x=time_hour,y=temp,color=humid))+
-  geom_point()+
-  scale_color_viridis_c()+
+
+
+
+ewr_plot <- ggplot(early_january_weather,
+                   aes(x = time_hour, y = temp, color = humid)) +
+  geom_point() +
+  scale_color_viridis_c() +
   labs(title = "EWR January Temperature vs Time",
-        x = "Time (hour)", y = "Temperature (F)", color = "Humidity(%)")+
+       x = "Time (hour)", y = "Temperature (F)",
+       color = "Humidity (%)") +
   theme_minimal()
+
+
+ewr_plot
+
+ggsave("ewr_plot.png", plot = ewr_plot, width = 7, height = 5, dpi = 300)
+
 ```
 
 #Problem 2
+```{r}
+library(tidyverse)
+set.seed(1234)
+x <- rnorm(10)
+plot_df = tibble(
+  sample_size = x,
+  is_positive = x>0,
+  character_vec = sample(letters,10),
+  factor_vec = factor(sample(
+    c("A","B","C"), 10, replace = TRUE
+  ))
+)
+
+str(plot_df)
+```
+```{r}
+mean(plot_df$sample_size)
+mean(plot_df$is_positive)
+mean(plot_df$character_vec)
+mean(plot_df$factor_vec)
+```
+Taking the mean of the whole dataframe results in error, argument is not numeric or logical. Therefore, the mean of each column needs to be taken separately. It's also worth noting the mean of character vector and factor vector are NA, because they are text strings not numeric values so taking the mean is not possible.
+
+
 
 
 
