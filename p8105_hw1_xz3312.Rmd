@@ -8,9 +8,7 @@ output: html_document
 ##Loading package and dataset
 ```{r}
 install.packages("moderndive")
-library(moderndive)
 data("early_january_weather")
-skimr::skim(early_january_weather)
 ```
 
 ##Dataset description
@@ -84,7 +82,7 @@ as.numeric(plot_df$is_positive)
 as.numeric(plot_df$character_vec)
 as.numeric(plot_df$factor_vec)
 ```
-Logical vector can be converted to numeric values, with True = 1 and False = 0. Character vector consists of texts that cannot be converted to numeric values hence the as.numeric function result is NA. Factor vector can be converted to numeric values that represent the letter: A = 1, B = 2, C = 3.
+Logical vector can be converted to numeric values and its mean can be taken and logically interpreted, with True = 1 and False = 0. Character vector consists of texts that cannot be converted to numeric values hence the as.numeric function result is NA. Factor vector can be converted to numeric values that represent the letter: A = 1, B = 2, C = 3. However, it is meaningless to take the mean of factor vector because it's used for classification.
 
 
 
