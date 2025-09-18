@@ -23,15 +23,25 @@ which includes temperature, dew point, humidity, wind direction, wind speed, win
 nrow(early_january_weather)
 ncol(early_january_weather)
 ```
-which is 358 rows and 15 columns. The mean temperature of the dataset is
+which is 358 rows and 15 columns. The mean temperature of the dataset is 39.58212 degrees Fahrenheit, as shown here
 ```{r}
 mean(early_january_weather$temp)
 ```
-39.58212 degrees Fahrenheit.
+
+
+##Make a scatter plot of temp vs time(hour)
+```{r}
+library(ggplot2)
+
+ggplot(early_january_weather, aes(x=time_hour,y=temp,color=humid))+
+  geom_point()+
+  scale_color_viridis_c()+
+  labs(title = "EWR January Temperature vs Time",
+        x = "Time (hour)", y = "Temperature (F)", color = "Humidity(%)")+
+  theme_minimal()
+```
 
 #Problem 2
-
-
 
 
 
