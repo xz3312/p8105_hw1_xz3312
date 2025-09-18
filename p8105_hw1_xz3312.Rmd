@@ -1,0 +1,19 @@
+---
+title: "p8105_hw1_xz3312"
+author: "Eric Zhang"
+date: "2025-09-17"
+output: html_document
+---
+##Problem 1
+```{r}
+install.packages("moderndive")
+library(moderndive)
+data("early_january_weather")
+```
+
+```{r}
+data("early_january_weather")
+help("early_january_weather")
+hw1_data <- 2
+```
+
