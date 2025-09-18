@@ -4,16 +4,36 @@ author: "Eric Zhang"
 date: "2025-09-17"
 output: html_document
 ---
-##Problem 1
+#Problem 1
+##Loading package and dataset
 ```{r}
 install.packages("moderndive")
 library(moderndive)
 data("early_january_weather")
+skimr::skim(early_january_weather)
 ```
 
+##Dataset description
+The dataset early january weather shows hourly weather observations of Newark in January 2013. The dataset describes Newark weather conditions using variables
 ```{r}
-data("early_january_weather")
-help("early_january_weather")
-hw1_data <- 2
+paste(names(early_january_weather)[6:15],collapse = ",")
 ```
+which includes temperature, dew point, humidity, wind direction, wind speed, wind gust, precipitation, pressure, and visibility. Additionally, the dataset size is
+```{r}
+nrow(early_january_weather)
+ncol(early_january_weather)
+```
+which is 358 rows and 15 columns. The mean temperature of the dataset is
+```{r}
+mean(early_january_weather$temp)
+```
+39.58212 degrees Fahrenheit.
+
+#Problem 2
+
+
+
+
+
+
 
